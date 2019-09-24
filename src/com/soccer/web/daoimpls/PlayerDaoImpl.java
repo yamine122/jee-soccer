@@ -15,6 +15,7 @@ public class PlayerDaoImpl implements PlayerDao{
 	
 	public static PlayerDaoImpl getInstance() {return instance;}
 	private PlayerDaoImpl() {}
+	
 
 
 
@@ -26,7 +27,7 @@ public class PlayerDaoImpl implements PlayerDao{
 					+ "FROM PLAYER";
 			PreparedStatement stnt = DatabaseFactory
 					.createDatabase(Constants.VENDER)
-					.getConnection()
+					.getConnection()  
 					.prepareStatement(sql);
 			ResultSet rs = stnt.executeQuery();
 			while(rs.next()) {
@@ -35,6 +36,7 @@ public class PlayerDaoImpl implements PlayerDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return positions;
 	}
 
