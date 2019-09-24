@@ -1,7 +1,6 @@
 package com.soccer.web.controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.soccer.web.domains.PlayerBean;
 import com.soccer.web.serviceimpls.PlayerServiceImpl;
-import com.soccer.web.services.PlayerService;
 
 
 

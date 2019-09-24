@@ -1,7 +1,6 @@
 package com.soccer.web.factories;
 
 
-import com.soccer.web.pools.Constants;
 
 public class DatabaseFactory{
 	
