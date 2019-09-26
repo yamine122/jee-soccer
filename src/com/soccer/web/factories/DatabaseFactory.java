@@ -1,38 +1,22 @@
 package com.soccer.web.factories;
 
-
+import com.soccer.web.factories.DB;
 
 public class DatabaseFactory{
 	
-	public static Database createDatabase(String vender) {
+	public static Database createDatabase(String vendor) {
 		Database db = null;
+		switch (DB.valueOf(vendor.toUpperCase())) {
 		
-		switch (vender) {
-		case "oracle": 
-			db = new Oracle();
+		case ORACLE : new Oracle();
 			
 			break;
 
-		case "mariadb":
-			db = new Maria();
-			
-			
+		case MARIA : new Maria();
 			break;
-		
-		case "h2":
-			
-			break;
-		case "db2":
-			
-			break;
-
-			
-			
 		}
-		return db;
 		
+		return db;
 	}
-	
-	
 	
 }

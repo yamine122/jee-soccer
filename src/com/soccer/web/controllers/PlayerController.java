@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.soccer.web.commands.Command;
+import com.soccer.web.commands.Receiver;
+import com.soccer.web.commands.Sender;
 import com.soccer.web.domains.PlayerBean;
 import com.soccer.web.serviceimpls.PlayerServiceImpl;
 
@@ -18,10 +21,19 @@ import com.soccer.web.serviceimpls.PlayerServiceImpl;
 @WebServlet("/player.do")
 public class PlayerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+	
     
    
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("진입");
+		Receiver.init(request);
+		Sender.forward(request, response);
+		
+		/*Receiver r = new Receiver();
+	
+		Sender s = new Sender();
+		Command c = new Command();
+				
 		String action = request.getParameter("action");
 		PlayerBean player = null;
 	
@@ -70,7 +82,7 @@ public class PlayerController extends HttpServlet {
 		String page = request.getParameter("page");
 
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/"+page+ ".jsp");
-		rd.forward(request, response);
+		rd.forward(request, response);*/
 		
 		
 	}

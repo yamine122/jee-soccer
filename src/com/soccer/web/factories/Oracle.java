@@ -13,8 +13,11 @@ public class Oracle implements Database{
 		
 		try {
 			
-			Class.forName(Constants.ORACLE_DRIVER);
-			conn = DriverManager.getConnection(Constants.ORACLE_URL, Constants.USERNAME, Constants.PASSWORD);
+			Class.forName(DBDriver.ORACLE_DRIVER.toString());
+			conn = DriverManager.getConnection(
+					DBUrl.ORACLE_URL.toString(),
+					Constants.USERNAME, 
+					Constants.PASSWORD);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
