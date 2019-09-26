@@ -8,8 +8,14 @@ public class Sender {
 	
 	public static void forward(HttpServletRequest request
 			, HttpServletResponse response) {
-		System.out.println("겟뷰"+Receiver.cmd.getView());
 		try {
+			System.out.println("5.sender 들어옴");
+			System.out.println(String.format("reqeust값 출력 :%s,%s,%s,%s"
+					, request.getParameter("playerId")
+					, request.getParameter("solar")
+					,request.getParameter("action")
+					,request.getParameter("page")));
+			System.out.println("도착지"+Receiver.cmd.getView());
 			request.getRequestDispatcher(Receiver.cmd.getView())
 			.forward(request, response);
 			

@@ -12,7 +12,7 @@ public class Command implements Order{
 
 	@Override
 	public void execute() {
-		this.view = String.format(Constants.PATH , page);
+		this.view = String.format(Constants.SINGLE_PATH , page);
 		
 	}
 	

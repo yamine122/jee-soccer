@@ -7,6 +7,9 @@ import com.soccer.web.domains.PlayerBean;
 
 public interface PlayerService {
 	//SQL_TEST_002 포지션 종류(중복제거,없으면 빈공간)
+	
+	//1.로그인
+	 public PlayerBean login(PlayerBean param); 
 	 
 	 public List<String> findPositions();
 	 //-- SQL_TEST_004-- 수원팀(ID: K02)골키퍼

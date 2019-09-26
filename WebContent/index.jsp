@@ -15,23 +15,22 @@
 		<table border="1" style="width:500px;height:200px; margin:100px auto">
 			<tr>
 				<td style="width:350px">
-				ID : <input type="text" name="playerId"/>
+				ID : <input type="text" name="playerId" style="width: 100%"/>
 				</td>
 				<td rowspan="2">
-					<input type="hidden" name="page" value="home" />
-					<input type="hidden" name="action" value="move"/>
-					<input type="submit" value="로그인"/>
+				
+				<input type="submit" value="로그인" style="width:100%; height:100%"/>
+					
 				</td>
 			</tr>
-			
-			
 			<tr>
 				<td>
-				PW : <input type="text" name="solar"/><br />
+				PW : <input type="text" name="solar" style="width:100%"/><br />
 				</td>
 			</tr>
-		
 		</table>
+					<input type="hidden" name="action" value="login"/>
+					<input type="hidden" name="page" value="home" style="width:100%"/>
 
 	</form>	
 	

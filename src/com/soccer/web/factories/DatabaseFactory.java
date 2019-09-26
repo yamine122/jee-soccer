@@ -8,11 +8,11 @@ public class DatabaseFactory{
 		Database db = null;
 		switch (DB.valueOf(vendor.toUpperCase())) {
 		
-		case ORACLE : new Oracle();
+		case ORACLE : db = new Oracle();
 			
 			break;
 
-		case MARIA : new Maria();
+		case MARIA : db = new Maria();
 			break;
 		}
 		
