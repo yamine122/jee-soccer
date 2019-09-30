@@ -13,7 +13,7 @@ public class MoveCommand extends Command{
 				,request.getParameter("action")
 				,request.getParameter("page")));
 		setDomain(request.getServletPath().substring(1, request.getServletPath().indexOf(".")));
-		setAction(request.getParameter("action")==null?"move":request.getParameter("action"));
+		setAction(request.getParameter("action"));
 		execute();
 		
 	}

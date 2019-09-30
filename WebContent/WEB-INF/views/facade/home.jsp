@@ -1,15 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-<body>
-<div>
-
+<jsp:include page="../common/head.jsp"/>
 
 		<h2><a id="a_join" href="#">2.포지션 종류 보기</a></h2>
 		
@@ -34,23 +26,21 @@
 	<input type="submit" value="전송"/>
 	
 	</form>
-</div>
+<jsp:include page="../common/foot.jsp"/>
 <script>
-$('#a_join').click(()=>{
+$('#a_join').click(function(){
 	alert('버튼클릭');
 	location.assign('<%=request.getContextPath() %>/player.do?action=find2&page=2_positions');
 });
 
-$('#btn4').submit(()=>{
+$('#btn4').submit(function(){
 	alert('버튼클릭');
 		
 });
 
-$('#btn5').submit(()=>{
+$('#btn5').submit(function(){
 	alert('버튼클릭');
 });
 </script>
 
 
-</body>
-</html>
