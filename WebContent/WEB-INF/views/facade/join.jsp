@@ -41,4 +41,3 @@
 app.init('${ctx}');
 
 </script>
-<!-- a -->
