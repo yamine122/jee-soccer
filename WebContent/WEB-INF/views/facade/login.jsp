@@ -33,7 +33,7 @@
 <div></div>
 <div></div>
 <div>
-<h3 id="join_a"><a id="a_join" href="#">회원가입</a></h3>
+<h3><a id="a_join" href="#">회원가입</a></h3>
 </div>
 <div></div>
 <script>

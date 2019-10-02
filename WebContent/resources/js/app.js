@@ -4,7 +4,7 @@ var app = (()=>{
 			playerService.login(ctx);
 			playerService.join(ctx);
 			playerService.moveJoin(ctx);
-			playerService.movePlayer();
+			playerService.btn4(ctx);
 			
 		}
 	};
@@ -34,6 +34,7 @@ var playerService = (()=>{
 				}else{
 					alert('입력한 아이디 값: '+$('#username').val());
 					$('#login_form').attr('action', ctx+'/player.do' );
+					$('#login_form').attr('method','POST');
 					$('#login_form').submit();	
 				}
 				
@@ -47,6 +48,7 @@ var playerService = (()=>{
 				}else{
 					alert('입력한 아이디 값: '+$('#join_playerId').val());
 					$('#join_form').attr('action', ctx+'/player.do' );
+					$('#join_form').attr('method','POST');
 					$('#join_form').submit();	
 				}
 			});
@@ -54,6 +56,20 @@ var playerService = (()=>{
 		moveJoin: (ctx)=>{
 			$('#a_join').click(()=>{
 				location.assign(ctx+'/facade.do?action=move&page=join');
+			});
+		},
+		btn2: (ctx)=>{
+			$('#btn2').click(()=>{
+				alert('클릭2');
+				location.assign(ctx+'/player.do?action=search&page=2_positions_question');
+				
+			});
+		},
+		btn4:(ctx)=>{
+			$('#btn4').click(()=>{
+				alert('클릭4');
+				$('#btn4_form').attr('action', ctx+'/player.do' );
+				$('#btn4_form').submit();
 			});
 		}
 		

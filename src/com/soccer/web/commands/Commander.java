@@ -22,13 +22,15 @@ public class Commander {
 				break;
 
 			case SEARCH:
-			
+				cmd = new SearchCommand(request);
 				break;
 			case UPDATE:
 			
 				break;
 			case DELETE:
-			
+				break;
+			case LOGIN: 
+				cmd = new LoginCommand(request);
 				break;
 		
 			case MOVE:

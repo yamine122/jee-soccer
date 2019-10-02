@@ -2,6 +2,7 @@ package com.soccer.web.daoimpls;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import com.soccer.web.pools.*;
@@ -83,11 +84,11 @@ public class PlayerDaoImpl implements PlayerDao{
 		try {
 			String sql = "SELECT DISTINCT POSITION as position \n"
 					+ "FROM PLAYER";
-			PreparedStatement stnt = DatabaseFactory
+			PreparedStatement stmt = DatabaseFactory
 					.createDatabase(Constants.VENDER)
 					.getConnection()  
 					.prepareStatement(sql);
-			ResultSet rs = stnt.executeQuery();
+			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				positions.add(rs.getString("position"));
 			}
@@ -99,13 +100,35 @@ public class PlayerDaoImpl implements PlayerDao{
 	}
 
 	@Override
-	public List<PlayerBean> selectByTeamIdPositions() {
-		List<PlayerBean> list = new ArrayList<>();
+	public List<PlayerBean> selectByTeamIdPositions(PlayerBean param) {
+		List<PlayerBean> list = null;
+		
+		try {
+			String sql = "SELECT PLAYER_NAME, POSITION \n" + 
+					"FROM PLAYER\n" + 
+					"WHERE TEAM_ID LIKE ?\n" + 
+					"    AND POSITION LIKE ?";
+			PreparedStatement stmt = DatabaseFactory
+					.createDatabase(Constants.VENDER)
+					.getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, param.getTeamId());
+			stmt.setString(2, param.getPosition());
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				list = new ArrayList<>();
+				list.add(param);
+				
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return list;
 	}
 
 	@Override
-	public List<PlayerBean> selectByTeamIdHeightPositions() {
+	public List<PlayerBean> selectByTeamIdHeightPositions(PlayerBean param) {
 		List<PlayerBean> list = new ArrayList<>();
 		return list;
 		

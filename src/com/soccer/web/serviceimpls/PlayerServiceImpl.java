@@ -42,7 +42,7 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTeamIdPosition(PlayerBean param) {
 		List<PlayerBean> players = PlayerDaoImpl
 				.getInstance()
-				.selectByTeamIdPositions();
+				.selectByTeamIdPositions(param);
 	
 				
 		return players;
@@ -51,7 +51,7 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTeamIdByHeightByPosition(PlayerBean param) {
 		List<PlayerBean> players = PlayerDaoImpl
 				.getInstance()
-				.selectByTeamIdHeightPositions();
+				.selectByTeamIdHeightPositions(param);
 		
 		return players;
 	}

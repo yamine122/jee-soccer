@@ -3,6 +3,7 @@ package com.soccer.web.commands;
 import javax.servlet.http.HttpServletRequest;
 
 import com.soccer.web.domains.PlayerBean;
+import com.soccer.web.pools.Constants;
 import com.soccer.web.serviceimpls.PlayerServiceImpl;
 
 
@@ -35,8 +36,18 @@ public class LoginCommand extends Command{
 		player.setSolar(solar);
 		player= PlayerServiceImpl.getInstance().login(player);
 		
-		setPage((player!=null) ? request.getParameter("page") :"main" );
-		super.execute();
+		
+		
+		if(player!=null) {
+			this.view = (String.format(Constants.DOUBLE_PATH,"player","main" ));
+			request.setAttribute("page", "");
+			
+		}else {
+			this.view = (String.format(Constants.DOUBLE_PATH,"facade","fail" ));
+			
+		}
+		
+		
 		
 	}
 }

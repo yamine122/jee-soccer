@@ -35,6 +35,9 @@ public class PlayerController extends HttpServlet {
 		case CREATE:
 			 request.setAttribute("page", "login");
 			break;
+		case SEARCH:
+			request.setAttribute("page", "2_positions_question");
+			break;
 		default:
 			break;
 		}

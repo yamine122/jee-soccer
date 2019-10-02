@@ -10,7 +10,7 @@ public interface PlayerDao {
 	 public PlayerBean selectByPlayerIdSolar(PlayerBean param);
 	 public boolean insertPlayer(PlayerBean param);
 	 public List<String> selectPositions();
-	 public List<PlayerBean> selectByTeamIdPositions();
-	 public List<PlayerBean> selectByTeamIdHeightPositions();
+	 public List<PlayerBean> selectByTeamIdPositions(PlayerBean param);
+	 public List<PlayerBean> selectByTeamIdHeightPositions(PlayerBean param);
 	 public List<PlayerBean> selectByMany(PlayerBean param);
 }
