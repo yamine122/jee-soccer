@@ -35,7 +35,7 @@ public class LoginCommand extends Command{
 		player.setSolar(solar);
 		player= PlayerServiceImpl.getInstance().login(player);
 		
-		setPage((player!=null) ? request.getParameter("page") :"login" );
+		setPage((player!=null) ? request.getParameter("page") :"main" );
 		super.execute();
 		
 	}

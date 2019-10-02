@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:include page="../common/head.jsp"/>
 <div></div>
 <div>
 <img id="soccer" src=" ${img}/soccer.jpg" alt=""/>
@@ -37,7 +36,6 @@
 <h3 id="join_a"><a id="a_join" href="#">회원가입</a></h3>
 </div>
 <div></div>
-<jsp:include page="../common/foot.jsp"/>
 <script>
 app.init('${ctx}');
 </script>

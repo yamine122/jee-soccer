@@ -18,7 +18,7 @@ public class MoveCommand extends Command{
 		
 	}
 	public void execute() {
-		setPage(request.getParameter("page"));
+	
 		super.execute();
 		
 	}

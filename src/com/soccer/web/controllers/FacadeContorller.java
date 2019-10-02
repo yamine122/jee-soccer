@@ -27,16 +27,21 @@ public class FacadeContorller extends HttpServlet {
 					(r.toString().toLowerCase().equals("ctx"))?
 							request.getContextPath() : 
 								request.getContextPath()+"/resources/"+r.toString().toLowerCase());
-
-		}
-		
-		
+			}
+		System.out.println("페이지"+request.getParameter("page"));
+			if(request.getParameter("page")==null) {
+				request.setAttribute("page", "login");
+			}else {
+				request.setAttribute("page", "join");
+			}
+			
+			
 		request
 		.getRequestDispatcher(String.format(
 				Constants.DOUBLE_PATH,
 				request.getServletPath().
 				substring(1,request.getServletPath()
-						.indexOf(".")),"login"))
+						.indexOf(".")),"main"))
 		.forward(request, response);
 	}
 

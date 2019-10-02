@@ -25,6 +25,10 @@ public class PlayerServiceImpl implements PlayerService{
 		
 		
 	}
+	@Override
+	public boolean join(PlayerBean param) {
+		return PlayerDaoImpl.getInstance().insertPlayer(param);
+	}
 	
 	@Override
 	public List<String> findPositions() {
@@ -51,6 +55,10 @@ public class PlayerServiceImpl implements PlayerService{
 		
 		return players;
 	}
+
+	
+
+	
 
 	
 

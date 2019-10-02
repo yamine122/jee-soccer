@@ -1,24 +1,15 @@
 var app = (()=>{
 	return {
 		init : (ctx)=>{
-			playerService.login();
+			playerService.login(ctx);
+			playerService.join(ctx);
+			playerService.moveJoin(ctx);
+			playerService.movePlayer();
 			
-			
-			$('#a_join').click(()=>{
-				
-				alert('회원가입으로이동');
-				location.assign(ctx+'/player.do?action=move&page=join');
-			});
-			$('#a_back').click(()=>{
-				alert('뒤로가기');
-				location.assign(ctx+'/player.do?action=move&page=login');
-			});
-			$('#join_form').submit(()=>{
-				alert('회원가입');
-			});
-		}	
+		}
 	};
 })();
+
 var player = (()=>{
 	var _playerId, _playerName, _teamId, _ePlayerName, _nickname, _joinYyyy,
 	_position, _backNo, _nation, _birthDate, _solar, _height, _weight;
@@ -35,20 +26,39 @@ var player = (()=>{
 })();
 var playerService = (()=>{
 	return {
-		login: ()=>{
+		login: (ctx)=>{
 			$('#login_btn').click(()=>{
-				if( $('#username').val()==='' ||
+				if($('#username').val()==='' || 
 						$('#solar').val()===''){
-					alert('필수값이없습니다.');
+					alert('필수값이 없습니다.');
 				}else{
-					alert('입력한 아이디값은 :' +$('#username').val());
-					$('#login_form').attr('action','/jee-soccer/player.do');
-					$('#login_form').submit();
+					alert('입력한 아이디 값: '+$('#username').val());
+					$('#login_form').attr('action', ctx+'/player.do' );
+					$('#login_form').submit();	
 				}
 				
 			});
+		}, 
+		join: (ctx)=>{
+			$('#join_btn').click(()=>{
+				if($('#join_playerId').val()==='' || 
+						$('#join_solar').val()===''){
+					alert('필수값이 없습니다.');
+				}else{
+					alert('입력한 아이디 값: '+$('#join_playerId').val());
+					$('#join_form').attr('action', ctx+'/player.do' );
+					$('#join_form').submit();	
+				}
+			});
+		},
+		moveJoin: (ctx)=>{
+			$('#a_join').click(()=>{
+				location.assign(ctx+'/facade.do?action=move&page=join');
+			});
 		}
+		
 	};
 })();
+
 
 
